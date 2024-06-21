@@ -3,16 +3,11 @@ resource "google_compute_instance" "amb-prod" {
   machine_type = var.machine_type
   zone = var.zone
   allow_stopping_for_update = true
-  metadata_startup_script = "${file("script.sh")}"
+  metadata_startup_script = file(var.script_file)
   boot_disk {
     initialize_params {
       image = var.os_image
     }
-  }
-
-  attached_disk {
-    source = google_compute_disk.test_disk.self_link
-    device_name = google_compute_disk.test_disk.name
   }
 
   network_interface {
@@ -21,9 +16,8 @@ resource "google_compute_instance" "amb-prod" {
     }
   }
 
-
   provisioner "file" {
-    source = "script.sh"
+    source = var.script_file
     destination = "/tmp/script.sh"
   }
 
