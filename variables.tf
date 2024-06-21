@@ -5,7 +5,6 @@ variable "credentials_file" {
   default = "credentials.json"
 }
 
-
 variable "region" {
   default = "us-central1"
 }
@@ -36,4 +35,9 @@ variable "user" {
 
 variable "size" {
   default = 20
+}
+
+variable "script_file" {
+  default = "scripts/script.sh"
+  
 }
