@@ -34,10 +34,17 @@ variable "user" {
 }
 
 variable "size" {
+  description = "value of the disk size in GB"
   default = 20
 }
 
 variable "script_file" {
   default = "scripts/script.sh"
   
+}
+
+variable "instance_count" {
+  description = "Number of instances to create"
+  type = number
+  default = 3
 }
