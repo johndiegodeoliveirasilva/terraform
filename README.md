@@ -32,3 +32,7 @@ $ terraform apply
 $ terraform destroy
   
 ```
+# Docs
+
+
+[Terrafrom Pages]([https://pages.github.com/](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_instance?product_intent=terraform)).
